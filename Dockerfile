@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy all project files into the container
 COPY . .
 
+# Grant execute permissions to the Gradle wrapper
+RUN chmod +x ./gradlew
+
 # Build the application using Gradle
 RUN ./gradlew build
 
